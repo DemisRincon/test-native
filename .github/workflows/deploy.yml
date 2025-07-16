@@ -26,10 +26,10 @@ jobs:
       - name: Install Expo CLI
         run: yarn global add @expo/cli
 
-          - name: Build for web
-      run: yarn build:web
-      env:
-        EXPO_PUBLIC_API_URL: ${{ secrets.EXPO_PUBLIC_API_URL }}
+      - name: Build for web
+        run: yarn build:web
+        env:
+          EXPO_PUBLIC_API_URL: ${{ secrets.EXPO_PUBLIC_API_URL }}
 
       - name: Deploy to GitHub Pages
         if: github.ref == 'refs/heads/main'
